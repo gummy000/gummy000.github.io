@@ -83,6 +83,9 @@
   }
   .card .meta { font-size: 13px; color: var(--ink-3); }
   .card h3 { margin-top: 6px; font-size: 24px; letter-spacing: -0.02em; line-height: 1.4; }
+  .title-row { margin-top: 10px; display: flex; align-items: center; gap: 14px; }
+  .title-row h3 { margin-top: 0; }
+  .logo-mark { flex: none; width: 48px; height: 48px; border-radius: 12px; }
   .card .lead { margin-top: 12px; color: var(--ink-2); }
   .chips { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
   .chip {
@@ -119,6 +122,8 @@
     .hero p { font-size: 16px; }
     .card { padding: 24px; }
     .points, .grid { grid-template-columns: 1fr; }
+    .title-row { align-items: flex-start; }
+    .title-row h3 { font-size: 21px; }
   }
 </style>
 </head>
@@ -151,7 +156,10 @@
 
     <article class="card">
       <div class="meta">공동창업 · 현재 진행 중</div>
-      <h3>올인원큐 — 태양광 발전사업자를 위한 정산·세금 신고 앱</h3>
+      <div class="title-row">
+        <img class="logo-mark" src="images/allinoneq-logo.png" alt="올인원큐 로고" width="48" height="48">
+        <h3>올인원큐 — 태양광 발전사업자를 위한 <span class="nw">정산·세금 신고 앱</span></h3>
+      </div>
       <p class="lead">매달 여러 사이트를 오가며 처리하던 복잡한 과정을 한 앱에 모았습니다.<br>서비스 기획부터 출시까지, 제품의 기술·개발을 총괄하고 있습니다.</p>
       <div class="chips">
         <span class="chip">기획</span><span class="chip">UX/UI 디자인</span><span class="chip">앱</span><span class="chip">백엔드</span><span class="chip">배포·운영</span>
@@ -201,7 +209,7 @@
 </main>
 
 <footer>
-  <div class="wrap">© 2026 차태준 · 최종 업데이트 2026-10-05 · v0.5</div>
+  <div class="wrap">© 2026 차태준 · 최종 업데이트 2026-10-05 · v0.6</div>
 </footer>
 </body>
 </html>
