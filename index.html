@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>차태준 — 풀스택·프로덕트 엔지니어</title>
+<meta name="description" content="기획부터 디자인, 개발, 배포까지 혼자 끝까지 만드는 풀스택·프로덕트 엔지니어 차태준의 포트폴리오.">
+<meta property="og:title" content="차태준 — 풀스택·프로덕트 엔지니어">
+<meta property="og:description" content="실제 B2B 서비스를 기획·디자인·개발해 운영하고 있습니다.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --bg: #fbfbfa;
+    --surface: #ffffff;
+    --ink: #17181a;
+    --ink-2: #55585e;
+    --ink-3: #8a8d93;
+    --line: #e6e6e3;
+    --accent: #2f5bea;
+    --accent-soft: rgba(47, 91, 234, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111214;
+      --surface: #18191c;
+      --ink: #ececee;
+      --ink-2: #a9acb2;
+      --ink-3: #7c7f86;
+      --line: #2a2c30;
+      --accent: #7b9bff;
+      --accent-soft: rgba(123, 155, 255, 0.12);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  header.top {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { font-weight: 700; text-decoration: none; letter-spacing: -0.01em; }
+  nav a { margin-left: 20px; font-size: 14px; color: var(--ink-2); text-decoration: none; }
+  nav a:hover { color: var(--ink); }
+
+  .hero { padding: 96px 0 72px; }
+  .eyebrow { font-size: 14px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; }
+  .hero h1 {
+    margin-top: 16px;
+    font-size: clamp(30px, 5.2vw, 46px);
+    line-height: 1.3; letter-spacing: -0.025em; font-weight: 700;
+  }
+  .hero p { margin-top: 20px; max-width: 600px; font-size: 18px; color: var(--ink-2); }
+  .actions { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; height: 44px; padding: 0 20px;
+    border-radius: 10px; font-size: 15px; font-weight: 600; text-decoration: none;
+    border: 1px solid var(--line); background: var(--surface);
+  }
+  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 14px; font-weight: 600; color: var(--ink-3); letter-spacing: 0.04em; margin-bottom: 28px; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 32px; margin-bottom: 16px;
+  }
+  .card .meta { font-size: 13px; color: var(--ink-3); }
+  .card h3 { margin-top: 6px; font-size: 24px; letter-spacing: -0.02em; line-height: 1.4; }
+  .card .lead { margin-top: 12px; color: var(--ink-2); }
+  .chips { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+  }
+  .points { margin-top: 24px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 32px; }
+  .points div { font-size: 15px; color: var(--ink-2); }
+  .points strong { display: block; color: var(--ink); font-size: 15px; margin-bottom: 2px; }
+  .card .foot { margin-top: 24px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+  .card .foot a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .card .foot span { color: var(--ink-3); }
+
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .item { padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+  .item strong { display: block; font-size: 16px; margin-bottom: 6px; }
+  .item p { font-size: 15px; color: var(--ink-2); }
+
+  ol.how { list-style: none; counter-reset: how; }
+  ol.how li { counter-increment: how; display: grid; grid-template-columns: 40px 1fr; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  ol.how li:last-child { border-bottom: 0; }
+  ol.how li::before { content: "0" counter(how); font-weight: 700; color: var(--accent); font-size: 14px; padding-top: 2px; }
+  ol.how strong { display: block; }
+  ol.how p { color: var(--ink-2); font-size: 15px; }
+
+  .contact p { color: var(--ink-2); }
+  footer { padding: 40px 0 56px; font-size: 13px; color: var(--ink-3); border-top: 1px solid var(--line); }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 0 16px; }
+    nav a { margin-left: 14px; }
+    nav a.hide-sm { display: none; }
+    .hero { padding: 64px 0 48px; }
+    .hero p { font-size: 16px; }
+    .card { padding: 24px; }
+    .points, .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">차태준</a>
+    <nav>
+      <a href="#work">작업</a>
+      <a href="#skills" class="hide-sm">할 수 있는 일</a>
+      <a href="#how" class="hide-sm">일하는 방식</a>
+      <a href="#contact">연락</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow">Full-stack · Product Engineer</div>
+    <h1>기획부터 배포까지,<br>혼자 끝까지 만드는 엔지니어 차태준입니다.</h1>
+    <p>태양광 발전사업자를 위한 B2B 서비스 ‘올인원큐’를 기획·디자인·개발해 운영하고 있습니다. AI 도구로 속도를 내고, 모든 과정을 문서로 남깁니다.</p>
+    <div class="actions">
+      <a class="btn primary" href="#work">대표 작업 보기</a>
+      <a class="btn" href="#contact">연락하기</a>
+    </div>
+  </div>
+
+  <section id="work">
+    <h2>대표 작업</h2>
+
+    <article class="card">
+      <div class="meta">B2B 모바일 앱 · 공동창업 · 현재 진행 중</div>
+      <h3>올인원큐 — 태양광 발전사업자를 위한 정산·세금 신고 앱</h3>
+      <p class="lead">매달 여러 사이트와 엑셀을 오가며 처리하던 발전량 확인, 정산, 세금계산서 발행, 장부 정리를 한 앱으로 모았습니다. 서비스 기획부터 출시까지 제품 전 범위를 맡고 있습니다.</p>
+      <div class="chips">
+        <span class="chip">기획</span><span class="chip">UX/UI 디자인</span><span class="chip">안드로이드 앱</span><span class="chip">백엔드</span><span class="chip">배포·운영</span>
+      </div>
+      <div class="points">
+        <div><strong>요구사항부터 직접 설계</strong>요구사항 명세, 화면 설계, 데이터 모델(ERD)을 버전 관리하며 진행</div>
+        <div><strong>상태·오류까지 설계한 약 60개 화면</strong>가입·사업자 인증, 단계별 등록 폼, 장부, 문서 발행 흐름</div>
+        <div><strong>외부 서비스 연동 백엔드</strong>API·DB 설계와 외부 서비스 연동 구현</div>
+        <div><strong>출시와 운영</strong>Google Play 내부 테스트 출시, 서비스 랜딩페이지 운영</div>
+      </div>
+      <div class="foot">
+        <a href="https://allinoneq.kr" target="_blank" rel="noopener">서비스 소개 페이지 ↗</a>
+        <span>상세 케이스 스터디 준비 중</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="meta">웹 · 랜딩페이지 · 운영 중</div>
+      <h3>allinoneq.kr — 서비스 랜딩페이지</h3>
+      <p class="lead">AI 디자인 도구로 시안을 만들고, 가볍게 유지보수할 수 있도록 순수 정적 사이트(HTML/CSS/JS)로 옮겨 운영하고 있습니다.</p>
+      <div class="chips">
+        <span class="chip">디자인</span><span class="chip">프론트엔드</span><span class="chip">배포</span>
+      </div>
+      <div class="foot">
+        <a href="https://allinoneq.kr" target="_blank" rel="noopener">사이트 보기 ↗</a>
+      </div>
+    </article>
+  </section>
+
+  <section id="skills">
+    <h2>할 수 있는 일</h2>
+    <div class="grid">
+      <div class="item"><strong>서비스 기획</strong><p>요구사항 명세, 화면 설계, 데이터 모델(ERD)</p></div>
+      <div class="item"><strong>UX/UI 디자인</strong><p>브랜드와 디자인 시스템, 상태·오류 화면까지 (Figma, Claude Design)</p></div>
+      <div class="item"><strong>앱·웹 프론트엔드</strong><p>안드로이드 앱, 랜딩페이지, 관리자 화면</p></div>
+      <div class="item"><strong>백엔드</strong><p>API, 데이터베이스, 외부 서비스 연동</p></div>
+      <div class="item"><strong>배포·운영</strong><p>스토어 출시, 웹 호스팅, 도메인 관리</p></div>
+      <div class="item"><strong>AI 활용 개발</strong><p>Claude Code 등 AI 도구로 기획·디자인·개발 속도를 높이는 작업 방식</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>일하는 방식</h2>
+    <ol class="how">
+      <li><div><strong>문서로 시작하고 문서로 남깁니다</strong><p>요구사항, 데이터 모델, 아키텍처를 버전 관리하며 진행해 누구든 이어받을 수 있게 합니다.</p></div></li>
+      <li><div><strong>처음부터 끝까지 책임집니다</strong><p>기획·디자인·개발·배포 사이의 공백 없이, 사용자가 실제로 쓰는 결과까지 만듭니다.</p></div></li>
+      <li><div><strong>빠르게 공유하고, 약속한 날 전달합니다</strong><p>시안과 진행 상황은 자주 보여주고, 일정은 지킬 수 있는 만큼만 약속합니다.</p></div></li>
+    </ol>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>연락</h2>
+    <p>함께 만들 제품이 있다면 편하게 연락 주세요.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/gummy000" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 차태준 · 최종 업데이트 2026-10-05 · v0.1</div>
+</footer>
+</body>
+</html>
