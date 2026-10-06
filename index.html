@@ -111,6 +111,12 @@
   ol.how strong { display: block; }
   ol.how p { color: var(--ink-2); font-size: 15px; }
 
+  dl.cv > div { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  dl.cv > div:last-child { border-bottom: 0; }
+  dl.cv dt { font-size: 14px; color: var(--ink-3); padding-top: 2px; font-variant-numeric: tabular-nums; }
+  dl.cv dd strong { display: block; }
+  dl.cv dd p { color: var(--ink-2); font-size: 15px; }
+
   .contact p { color: var(--ink-2); }
   footer { padding: 40px 0 56px; font-size: 13px; color: var(--ink-3); border-top: 1px solid var(--line); }
 
@@ -123,6 +129,7 @@
     .card { padding: 24px; }
     .points, .grid { grid-template-columns: 1fr; }
     .title-row { align-items: flex-start; }
+    dl.cv > div { grid-template-columns: 1fr; gap: 2px; }
     .title-row h3 { font-size: 21px; }
   }
 </style>
@@ -135,6 +142,7 @@
       <a href="#work">작업</a>
       <a href="#skills" class="hide-sm">할 수 있는 일</a>
       <a href="#how" class="hide-sm">일하는 방식</a>
+      <a href="#about" class="hide-sm">이력</a>
       <a href="#contact">연락</a>
     </nav>
   </div>
@@ -155,7 +163,7 @@
     <h2>대표 작업</h2>
 
     <article class="card">
-      <div class="meta">공동창업 · 현재 진행 중</div>
+      <div class="meta">공동창업 · 2026.03 – 현재</div>
       <div class="title-row">
         <img class="logo-mark" src="images/allinoneq-logo.png" alt="올인원큐 로고" width="48" height="48">
         <h3>올인원큐 — 태양광 발전사업자를 위한 <span class="nw">정산·세금 신고 앱</span></h3>
@@ -199,17 +207,28 @@
     </ol>
   </section>
 
+  <section id="about">
+    <h2>이력</h2>
+    <dl class="cv">
+      <div><dt>2026.06 – 현재</dt><dd><strong>아르넬벤처스 · CPO</strong><p>올인원큐 기술·개발 총괄</p></dd></div>
+      <div><dt>2026 – 현재</dt><dd><strong>예비창업패키지 선정·수행</strong><p>올인원큐 · 기술·개발 담당</p></dd></div>
+      <div><dt>2026.04</dt><dd><strong>모두의 창업(교내) 최우수상</strong><p>기술·개발 담당</p></dd></div>
+      <div><dt>2027.02 졸업 예정</dt><dd><strong>한국공학대학교</strong><p>컴퓨터공학부 소프트웨어학과</p></dd></div>
+    </dl>
+  </section>
+
   <section id="contact" class="contact">
     <h2>연락</h2>
     <p>함께 만들 제품이 있다면 편하게 연락 주세요.</p>
     <div class="actions">
-      <a class="btn primary" href="https://github.com/gummy000" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn primary" href="mailto:1x_etpneur@naver.com">1x_etpneur@naver.com</a>
+      <a class="btn" href="https://github.com/gummy000" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">© 2026 차태준 · 최종 업데이트 2026-10-05 · v0.6</div>
+  <div class="wrap">© 2026 차태준 · 최종 업데이트 2026-10-06 · v0.7</div>
 </footer>
 </body>
 </html>
