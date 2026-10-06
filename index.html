@@ -92,6 +92,7 @@
     font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 999px;
     background: var(--accent-soft); color: var(--accent);
   }
+  .stack-line { margin-top: 12px; font-size: 13px; color: var(--ink-3); }
   .points { margin-top: 24px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 32px; }
   .points div { font-size: 15px; color: var(--ink-2); }
   .points strong { display: block; color: var(--ink); font-size: 15px; margin-bottom: 2px; }
@@ -141,6 +142,7 @@
     <nav>
       <a href="#work">작업</a>
       <a href="#skills" class="hide-sm">할 수 있는 일</a>
+      <a href="#stack" class="hide-sm">기술</a>
       <a href="#how" class="hide-sm">일하는 방식</a>
       <a href="#about" class="hide-sm">이력</a>
       <a href="#contact">연락</a>
@@ -172,6 +174,7 @@
       <div class="chips">
         <span class="chip">기획</span><span class="chip">UX/UI 디자인</span><span class="chip">앱</span><span class="chip">백엔드</span><span class="chip">배포·운영</span>
       </div>
+      <p class="stack-line">React Native · NestJS · PostgreSQL · AWS ECS · GitHub Actions</p>
       <div class="points">
         <div><strong>요구사항부터 직접 설계</strong>요구사항 명세, 화면 설계, 데이터 모델(ERD)을 버전 관리하며 진행</div>
         <div><strong>상태·오류까지 설계한 약 60개 화면</strong>가입·사업자 인증, 단계별 등록 폼, 장부, 문서 발행 흐름</div>
@@ -196,6 +199,22 @@
       <div class="item"><strong>배포·운영</strong><p>스토어 출시, 웹 호스팅, 도메인 관리</p></div>
       <div class="item"><strong>AI 활용 개발</strong><p>Claude Code 등 AI 도구로 기획·디자인·개발 속도를 높이는 작업 방식</p></div>
     </div>
+  </section>
+
+  <section id="stack">
+    <h2>기술 스택</h2>
+    <dl class="cv">
+      <div><dt>모바일 앱</dt><dd><p>React Native, Expo(Expo Router), TypeScript, React Native Paper, Zustand, TanStack Query</p></dd></div>
+      <div><dt>백엔드</dt><dd><p>NestJS, TypeScript, Prisma ORM, Passport.js + JWT, Pino</p></dd></div>
+      <div><dt>데이터베이스</dt><dd><p>PostgreSQL 16 (AWS RDS)</p></dd></div>
+      <div><dt>인프라</dt><dd><p>AWS ECS Fargate, ALB, ECR, RDS, S3, Secrets Manager, ACM, CloudWatch</p></dd></div>
+      <div><dt>CI·모노레포</dt><dd><p>GitHub Actions, Turborepo, pnpm</p></dd></div>
+      <div><dt>테스트</dt><dd><p>Jest</p></dd></div>
+      <div><dt>외부 연동</dt><dd><p>Claude API, Solapi(알림톡·SMS), 국세청 사업자 진위확인 API, 기상청 API, 카카오 로컬 API, 팝빌(전자세금계산서)</p></dd></div>
+      <div><dt>웹</dt><dd><p>HTML, CSS, JavaScript (서비스 랜딩페이지)</p></dd></div>
+      <div><dt>디자인·협업</dt><dd><p>Figma, GitHub, Claude Code, Claude Design</p></dd></div>
+      <div><dt>배포</dt><dd><p>Google Play Console(내부 테스트), Gradle 릴리스 빌드</p></dd></div>
+    </dl>
   </section>
 
   <section id="how">
@@ -228,7 +247,7 @@
 </main>
 
 <footer>
-  <div class="wrap">© 2026 차태준 · 최종 업데이트 2026-10-06 · v0.7</div>
+  <div class="wrap">© 2026 차태준 · 최종 업데이트 2026-10-06 · v0.8</div>
 </footer>
 </body>
 </html>
