@@ -57,11 +57,21 @@
   nav a { margin-left: 20px; font-size: 14px; color: var(--ink-2); text-decoration: none; }
   nav a:hover { color: var(--ink); }
 
-  .hero { padding: 96px 0 72px; }
+  .hero { padding: 96px 0 72px; display: grid; grid-template-columns: 1fr auto; column-gap: 48px; align-items: center; }
+  .hero-profile { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-photo {
+    display: block; width: 184px; height: auto; aspect-ratio: 3 / 4; object-fit: cover;
+    border-radius: 16px; border: 1px solid var(--line); background: var(--surface);
+  }
+  .hero-profile figcaption { margin-top: 16px; }
+  .role-1 { display: block; }
+  .role-sep { display: none; }
+  .hero-name { display: block; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.4; }
+  .hero-profile .eyebrow { display: block; margin-top: 2px; }
   .eyebrow { font-size: 14px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; }
   .hero h1 {
-    margin-top: 16px;
-    font-size: clamp(30px, 5.2vw, 46px);
+    margin-top: 0;
+    font-size: clamp(24px, calc(6.9vw - 20px), 41px);
     line-height: 1.3; letter-spacing: -0.025em; font-weight: 700;
   }
   .hero p { margin-top: 20px; max-width: 680px; font-size: 18px; color: var(--ink-2); }
@@ -81,24 +91,22 @@
     background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
     padding: 32px; margin-bottom: 16px;
   }
-  .card .meta { font-size: 13px; color: var(--ink-3); }
-  .card h3 { margin-top: 6px; font-size: 24px; letter-spacing: -0.02em; line-height: 1.4; }
-  .title-row { margin-top: 10px; display: flex; align-items: center; gap: 14px; }
-  .title-row h3 { margin-top: 0; }
-  .logo-mark { flex: none; width: 48px; height: 48px; border-radius: 12px; }
-  .card .lead { margin-top: 12px; color: var(--ink-2); }
-  .chips { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .card-head { display: flex; align-items: center; gap: 16px; }
+  .logo-mark { flex: none; width: 52px; height: 52px; border-radius: 13px; }
+  .card h3 { font-size: 24px; letter-spacing: -0.02em; line-height: 1.3; }
+  .card .period { margin-left: 8px; font-size: 13px; font-weight: 500; color: var(--ink-3); letter-spacing: 0; white-space: nowrap; }
+  .card .sub { margin-top: 2px; font-size: 15px; color: var(--ink-2); }
+  .chips { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
   .chip {
     font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 999px;
     background: var(--accent-soft); color: var(--accent);
   }
-  .stack-line { margin-top: 12px; font-size: 13px; color: var(--ink-3); }
-  .points { margin-top: 24px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 32px; }
-  .points div { font-size: 15px; color: var(--ink-2); }
-  .points strong { display: block; color: var(--ink); font-size: 15px; margin-bottom: 2px; }
-  .card .foot { margin-top: 24px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+  .chip.role { background: var(--accent); color: var(--surface); }
+  .points { margin-top: 24px; list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 32px; }
+  .points li { position: relative; padding-left: 16px; font-size: 15px; line-height: 1.6; }
+  .points li::before { content: ""; position: absolute; left: 2px; top: 0.68em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+  .card .foot { margin-top: 28px; font-size: 14px; }
   .card .foot a { color: var(--accent); font-weight: 600; text-decoration: none; }
-  .card .foot span { color: var(--ink-3); }
 
   .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .item { padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
@@ -125,13 +133,26 @@
     .wrap { padding: 0 16px; }
     nav a { margin-left: 14px; }
     nav a.hide-sm { display: none; }
-    .hero { padding: 64px 0 48px; }
+    .hero { padding: 40px 0 48px; grid-template-columns: 1fr; row-gap: 28px; text-align: center; }
+    .hero-profile { grid-row: 1; }
+    .hero-photo { width: 128px; border-radius: 14px; }
+    .hero-profile figcaption { margin-top: 14px; }
+    .role-1 { display: inline; }
+    .role-sep { display: inline; }
+    .hero-name { font-size: 19px; }
+    .hero-profile .eyebrow { font-size: 13px; }
+    .hero h1 { font-size: clamp(19px, calc(6.6vw - 2px), 30px); }
+    .hero p { margin-left: auto; margin-right: auto; }
+    .hero .actions { justify-content: center; }
     .hero p { font-size: 16px; }
     .card { padding: 24px; }
     .points, .grid { grid-template-columns: 1fr; }
-    .title-row { align-items: flex-start; }
+    .card-head { align-items: flex-start; }
+    .card h3 { font-size: 21px; }
     dl.cv > div { grid-template-columns: 1fr; gap: 2px; }
-    .title-row h3 { font-size: 21px; }
+  }
+  @media (max-width: 380px) {
+    .hero p { font-size: 15px; }
   }
 </style>
 </head>
@@ -152,39 +173,40 @@
 
 <main class="wrap">
   <div class="hero">
-    <div class="eyebrow">Full-stack · Product Engineer</div>
-    <h1>기획부터 <span class="nw">개발·배포·운영까지,</span><br>전 과정을 책임지는 엔지니어 차태준입니다.</h1>
-    <p>다수의 경진대회에서 기획력을 검증받았습니다.<br>태양광 발전사업자를 위한 서비스 ‘올인원큐’를 기획·디자인·개발해 운영 중입니다.</p>
+    <div class="hero-text">
+    <h1>기획부터 <span class="nw">개발·배포·운영까지,</span><br>전 과정을 책임지는 테크 파운더.</h1>
     <div class="actions">
       <a class="btn primary" href="#work">대표 작업 보기</a>
       <a class="btn" href="#contact">연락하기</a>
     </div>
+    </div>
+    <figure class="hero-profile">
+      <img class="hero-photo" src="images/profile.jpg" alt="차태준 프로필 일러스트" width="480" height="640">
+      <figcaption><strong class="hero-name">차태준</strong><span class="eyebrow"><span class="role-1">Full-stack Engineer</span><span class="role-sep"> · </span><span class="nw">Tech Lead · CEO</span></span></figcaption>
+    </figure>
   </div>
 
   <section id="work">
     <h2>대표 작업</h2>
 
     <article class="card">
-      <div class="meta">공동창업 · 2026.03 – 현재</div>
-      <div class="title-row">
-        <img class="logo-mark" src="images/allinoneq-logo.png" alt="올인원큐 로고" width="48" height="48">
-        <h3>올인원큐 — 태양광 발전사업자를 위한 <span class="nw">정산·세금 신고 앱</span></h3>
+      <div class="card-head">
+        <img class="logo-mark" src="images/allinoneq-logo.png" alt="올인원큐 로고" width="52" height="52">
+        <div>
+          <h3>올인원큐<span class="period">2026.03 – 현재</span></h3>
+          <p class="sub">태양광 발전사업자용 <span class="nw">정산·세금 신고 앱</span></p>
+        </div>
       </div>
-      <p class="lead">매달 여러 사이트를 오가며 처리하던 복잡한 과정을 한 앱에 모았습니다.<br>서비스 기획부터 출시까지, 제품의 기술·개발을 총괄하고 있습니다.</p>
       <div class="chips">
-        <span class="chip">기획</span><span class="chip">UX/UI 디자인</span><span class="chip">앱</span><span class="chip">백엔드</span><span class="chip">배포·운영</span>
+        <span class="chip role">Tech Lead</span><span class="chip">기획</span><span class="chip">UX/UI 디자인</span><span class="chip">앱</span><span class="chip">백엔드</span><span class="chip">배포·운영</span>
       </div>
-      <p class="stack-line">React Native · NestJS · PostgreSQL · AWS ECS · GitHub Actions</p>
-      <div class="points">
-        <div><strong>요구사항부터 직접 설계</strong>요구사항 명세, 화면 설계, 데이터 모델(ERD)을 버전 관리하며 진행</div>
-        <div><strong>상태·오류까지 설계한 약 60개 화면</strong>가입·사업자 인증, 단계별 등록 폼, 장부, 문서 발행 흐름</div>
-        <div><strong>외부 서비스 연동 백엔드</strong>API·DB 설계와 외부 서비스 연동 구현</div>
-        <div><strong>출시와 운영</strong>Google Play 내부 테스트 출시, 서비스 랜딩페이지 운영</div>
-      </div>
-      <div class="foot">
-        <a href="https://allinoneq.kr" target="_blank" rel="noopener">서비스 소개 페이지 ↗</a>
-        <span>상세 케이스 스터디 준비 중</span>
-      </div>
+      <ul class="points">
+        <li>요구사항·화면 설계·ERD 직접 작성</li>
+        <li>상태·오류까지 설계한 약 60개 화면</li>
+        <li>외부 서비스 연동 API·DB 설계와 구현</li>
+        <li>Google Play 내부 테스트 출시, <span class="nw">랜딩페이지 운영</span></li>
+      </ul>
+      <div class="foot"><a href="https://allinoneq.kr" target="_blank" rel="noopener">서비스 소개 페이지 ↗</a></div>
     </article>
 
   </section>
@@ -229,7 +251,7 @@
   <section id="about">
     <h2>이력</h2>
     <dl class="cv">
-      <div><dt>2026.06 – 현재</dt><dd><strong>아르넬벤처스 · CPO</strong><p>올인원큐 기술·개발 총괄</p></dd></div>
+      <div><dt>2026.06 – 현재</dt><dd><strong>아르넬벤처스 · 사내이사</strong><p>공동창업, 올인원큐 기술·개발 총괄</p></dd></div>
       <div><dt>2026 – 현재</dt><dd><strong>예비창업패키지 선정·수행</strong><p>올인원큐 · 기술·개발 담당</p></dd></div>
       <div><dt>2026.04</dt><dd><strong>모두의 창업(교내) 최우수상</strong><p>기술·개발 담당</p></dd></div>
       <div><dt>2027.02 졸업 예정</dt><dd><strong>한국공학대학교</strong><p>컴퓨터공학부 소프트웨어학과</p></dd></div>
@@ -247,7 +269,7 @@
 </main>
 
 <footer>
-  <div class="wrap">© 2026 차태준 · 최종 업데이트 2026-10-06 · v0.8</div>
+  <div class="wrap">© 2026 차태준 · 최종 업데이트 2026-10-13 · v0.9</div>
 </footer>
 </body>
 </html>
